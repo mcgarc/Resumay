@@ -5,7 +5,6 @@
 \RequirePackage{titlesec} % Customise section headings
 \RequirePackage{environ}
 \RequirePackage{enumitem}
-\RequirePackage{etoolbox}
 \RequirePackage[a4paper, total={6in,8in}]{geometry}
 
 % No headers or footers (page numbers)
@@ -17,14 +16,28 @@
 \DeclareOption{sans}{\OptionNotUsed}
 \ProcessOptions\relax
 
-% Header
-\date{} % Hide date
-\newcommand{\name}[1]{\title{\Huge{\bfseries{#1}}}}
+% Header arguments
+\newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\email}[1]{\def\@email{#1}}
 \newcommand{\phone}[1]{\def\@phone{#1}}
+
+% New maketitle
+\date{} % Hide date
+\renewcommand{\maketitle}{
+\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  \textbf{\Huge\@name}\\
+  \vspace{4pt}
+  \large\@email\\
+  \large\@phone\\
+  \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+\end{flushleft}\egroup
+}
+
+
+
 %\newcommand{\name}[1]{\title{\@phone}}
 %\patchcmd{\@maketitle}{\@title}{\textbf{\@email{}}}
-\author{\@phone\,---\,\@email}
 %\renewcommand{\maketitle}{
 %  \begin{titlepage}
 %  \@title
