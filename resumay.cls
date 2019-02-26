@@ -20,6 +20,8 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\email}[1]{\def\@email{#1}}
 \newcommand{\phone}[1]{\def\@phone{#1}}
+\newif\ifultitle
+\newcommand{\underlinetitle}{\ultitletrue}
 
 % New maketitle
 \date{} % Hide date
@@ -28,9 +30,10 @@
 \begin{flushleft}
   \textbf{\Huge\@name}\\
   \vspace{4pt}
-  \large\@email\\
-  \large\@phone\\
+  \large\@phone \hfill \large\@email\\
+  \ifultitle
   \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+  \fi
 \end{flushleft}\egroup
 }
 
