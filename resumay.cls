@@ -5,6 +5,7 @@
 \RequirePackage{titlesec} % Customise section headings
 \RequirePackage{environ}
 \RequirePackage{enumitem}
+\RequirePackage[a4paper, total={6in,8in}]{geometry}
 
 % No headers or footers (page numbers)
 \pagestyle{empty}
