@@ -5,6 +5,7 @@
 \RequirePackage{titlesec} % Customise section headings
 \RequirePackage{environ}
 \RequirePackage{enumitem}
+\RequirePackage{etoolbox}
 \RequirePackage[a4paper, total={6in,8in}]{geometry}
 
 % No headers or footers (page numbers)
@@ -12,9 +13,23 @@
 % Dense text
 \setlength{\parskip}{0.1mm}
 
-%% TODO Create web-friendly sans serif CV
+% TODO Create web-friendly sans serif CV
 \DeclareOption{sans}{\OptionNotUsed}
 \ProcessOptions\relax
+
+% Header
+\date{} % Hide date
+\newcommand{\name}[1]{\title{\Huge{\bfseries{#1}}}}
+\newcommand{\email}[1]{\def\@email{#1}}
+\newcommand{\phone}[1]{\def\@phone{#1}}
+%\newcommand{\name}[1]{\title{\@phone}}
+%\patchcmd{\@maketitle}{\@title}{\textbf{\@email{}}}
+\author{\@phone\,---\,\@email}
+%\renewcommand{\maketitle}{
+%  \begin{titlepage}
+%  \@title
+%  \end{titlepage}
+%}
 
 % Section headers should be large, with small capitals and left aligned
 \titleformat{\section}
