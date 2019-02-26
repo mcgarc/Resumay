@@ -1,3 +1,16 @@
+% Resumay is for resum\'es
+% A super-simple LaTeX class for a clear, concise resum\'e
+% (CVs also supported!)
+
+% Copyright © 2019 Cameron McGarry <cameron@cmcgarry.co.uk>
+% This work is free. You can redistribute it and/or modify it under the
+% terms of the Do What The Fuck You Want To Public License, Version 2,
+% as published by Sam Hocevar. See the LICENSE file for more details.
+
+%%%%%%%%%%
+% Setup and requirements
+%%%%%%%%%%
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resumay}[2019/02/26 Resumay is for resumes]
 
@@ -7,6 +20,10 @@
 \RequirePackage{enumitem}
 \RequirePackage[a4paper, total={6in,8in}]{geometry}
 
+%%%%%%%%%%
+% Basic formatting
+%%%%%%%%%%
+
 % No headers or footers (page numbers)
 \pagestyle{empty}
 % Dense text
@@ -15,6 +32,10 @@
 % TODO Create web-friendly sans serif CV
 \DeclareOption{sans}{\OptionNotUsed}
 \ProcessOptions\relax
+
+%%%%%%%%%%
+% Title
+%%%%%%%%%%
 
 % Header arguments
 \newcommand{\name}[1]{\def\@name{#1}}
@@ -37,15 +58,9 @@
 \end{flushleft}\egroup
 }
 
-
-
-%\newcommand{\name}[1]{\title{\@phone}}
-%\patchcmd{\@maketitle}{\@title}{\textbf{\@email{}}}
-%\renewcommand{\maketitle}{
-%  \begin{titlepage}
-%  \@title
-%  \end{titlepage}
-%}
+%%%%%%%%%%
+% Custom commands and environments
+%%%%%%%%%%
 
 % Section headers should be large, with small capitals and left aligned
 \titleformat{\section}
