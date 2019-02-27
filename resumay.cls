@@ -28,6 +28,11 @@
 \pagestyle{empty}
 % Dense text
 \setlength{\parskip}{0.1mm}
+% New lengths
+\newlength{\poslevel}
+\newlength{\detaillevel}
+\setlength{\poslevel}{1em}
+\setlength{\detaillevel}{2\poslevel}
 
 % TODO Create web-friendly sans serif CV
 \DeclareOption{sans}{\OptionNotUsed}
@@ -62,6 +67,8 @@
 % Custom commands and environments
 %%%%%%%%%%
 
+% TODO Publication list
+
 % Section headers should be large, with small capitals and left aligned
 \titleformat{\section}
   {\Large\scshape\raggedright}
@@ -74,7 +81,7 @@
 % Subsection should be indented
 \titleformat{\subsection}
   {\bfseries}
-  {\hspace{1em}}
+  {\hspace{\poslevel}}
   {0em}
   {}
 % Reduce spacing
@@ -85,10 +92,20 @@
   \subsection{#1 \hfill #2--#3}
 }
 
-% Position environment produces a position header, then bullets any items
+% Position list environment produces a position header, then bullets any items
 \NewEnviron{positionlist}[3]{
   \position{#1}{#2}{#3}
-  \list{}{\leftmargin=2em \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
+  \list{}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
     \BODY
   \endlist
+}
+
+% TODO: Combine with positionlist into one thing?
+% Position para produces a position header, then puts text into paragraph
+\NewEnviron{positionenv}[3]{
+  \position{#1}{#2}{#3}
+  \begin{minipage}{\textwidth}
+  \leftskip=\detaillevel \BODY
+  \end{minipage}
+  \vspace{-2pt}
 }
