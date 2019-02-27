@@ -132,7 +132,7 @@
   \ifx\techdetails\empty
     \leftskip=\detaillevel \BODY
   \else
-    \leftskip=\detaillevel \BODY \\ \emph{\techdetails}
+    \leftskip=\detaillevel \BODY \\ (\techdetails)
   \fi
   \end{minipage}
   \vspace{-2pt}
