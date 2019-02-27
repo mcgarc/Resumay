@@ -107,6 +107,9 @@
 \titlespacing*{\subsection}{0pt}{2pt}{2pt}
 
 % Define a position header
+% 1: Title (, location)
+% 2: Start date
+% 3: End date
 \newcommand{\position}[3]{
   \def\enddate{#3}
   \ifx\enddate\empty
@@ -117,6 +120,10 @@
 }
 
 % Position list environment produces a position header, then bullets any items
+% 1: Title (, location)
+% 2: Start date
+% 3: End date
+% Body: itemised points
 \NewEnviron{positionlist}[3]{
   \position{#1}{#2}{#3}
   \list{}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
@@ -125,6 +132,11 @@
 }
 
 % Position para produces a position header, then puts text into paragraph
+% 1: Title (, location)
+% 2: Start date
+% 3: End date
+% 4: Technical skills
+% Body: descriptive text
 \NewEnviron{positionenv}[4]{
   \def\techdetails{#4}
   \position{#1}{#2}{#3}
