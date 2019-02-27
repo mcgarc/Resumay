@@ -54,9 +54,9 @@
 \renewcommand{\maketitle}{
 \bgroup\setlength{\parindent}{0pt}
 \begin{flushleft}
-  \textbf{\Huge\@name}\\
+  \textbf{\Large\@name}\\
   \vspace{4pt}
-  \large\@phone \hfill \large\@email\\
+  \small\@phone \hfill \@email\\
   \ifultitle
   \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
   \fi
@@ -71,7 +71,7 @@
 
 % Section headers should be large, with small capitals and left aligned
 \titleformat{\section}
-  {\Large\scshape\raggedright}
+  {\large\scshape\raggedright}
   {}
   {0em}
   {}
@@ -89,7 +89,12 @@
 
 % Define a position header
 \newcommand{\position}[3]{
-  \subsection{#1 \hfill #2--#3}
+  \def\enddate{#3}
+  \ifx\enddate\empty
+    \subsection{#1 \hfill #2}
+  \else
+    \subsection{#1 \hfill #2--#3}
+  \fi
 }
 
 % Position list environment produces a position header, then bullets any items
@@ -102,10 +107,15 @@
 
 % TODO: Combine with positionlist into one thing?
 % Position para produces a position header, then puts text into paragraph
-\NewEnviron{positionenv}[3]{
+\NewEnviron{positionenv}[4]{
+  \def\techdetails{#4}
   \position{#1}{#2}{#3}
   \begin{minipage}{\textwidth}
-  \leftskip=\detaillevel \BODY
+  \ifx\techdetails\empty
+    \leftskip=\detaillevel \BODY
+  \else
+    \leftskip=\detaillevel \BODY \\ \emph{\techdetails}
+  \fi
   \end{minipage}
   \vspace{-2pt}
 }
