@@ -18,7 +18,7 @@
 \RequirePackage{titlesec} % Customise section headings
 \RequirePackage{environ}
 \RequirePackage{enumitem}
-\RequirePackage[a4paper, total={6in,8in}]{geometry}
+\RequirePackage[a4paper, total={6in,9in}]{geometry}
 
 %%%%%%%%%%
 % Basic formatting
@@ -144,7 +144,7 @@
   \ifx\techdetails\empty
     \leftskip=\detaillevel \BODY
   \else
-    \leftskip=\detaillevel \BODY \\ (\techdetails)
+    \leftskip=\detaillevel \BODY \,(\techdetails)
   \fi
   \end{minipage}
   \vspace{-2pt}
