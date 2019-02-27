@@ -36,9 +36,19 @@
 \setlength{\detaillevel}{2\poslevel}
 \setlength{\sectionsep}{3pt}
 
-% TODO Create web-friendly sans serif CV
-\DeclareOption{sans}{\OptionNotUsed}
+% Sans serif option
+\newif\if@sansres
+\DeclareOption{sans}{\@sansrestrue}
+
 \ProcessOptions\relax
+
+%%%%%%%%%%
+% Sans-serif
+%%%%%%%%%%
+
+\if@sansres
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
 
 %%%%%%%%%%
 % Title
@@ -71,12 +81,21 @@
 
 % TODO Publication list
 
-% Section headers should be large, with small capitals and left aligned
+\if@sansres
+% Sans: Section headers should be large and left aligned
+\titleformat{\section}
+  {\large\raggedright}
+  {}
+  {0em}
+  {}
+\else
+% Serif: Section headers should also be small capitals
 \titleformat{\section}
   {\large\scshape\raggedright}
   {}
   {0em}
   {}
+\fi
 % Reduce spacing
 \titlespacing*{\section}{0pt}{\sectionsep}{2pt}
 
@@ -107,7 +126,6 @@
   \endlist
 }
 
-% TODO: Combine with positionlist into one thing?
 % Position para produces a position header, then puts text into paragraph
 \NewEnviron{positionenv}[4]{
   \def\techdetails{#4}
