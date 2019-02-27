@@ -1,6 +1,6 @@
 # Resumay
 
-Resumay is a super-simple LaTeX class for a clear, concise resum\'e.
+Resumay is a super-simple LaTeX class for a clear, concise resum\\\'e.
 CVs are also supported!
 
 Distributed under WTFPL (see `LICENSE.txt`)
