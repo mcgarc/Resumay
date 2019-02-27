@@ -17,7 +17,8 @@ Specify if you want the header to be underlined with `underlinetitle`
 ## Todos
 
 * Example resume.tex
-* Sans-serif version (web-friendly?)
+* Publication list
 * More options for headers
 * Automatic placing of items in header
 * Manual control over order of items in header
+

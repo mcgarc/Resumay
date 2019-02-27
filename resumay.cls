@@ -79,8 +79,6 @@
 % Custom commands and environments
 %%%%%%%%%%
 
-% TODO Publication list
-
 \if@sansres
 % Sans: Section headers should be large and left aligned
 \titleformat{\section}
