@@ -31,8 +31,10 @@
 % New lengths
 \newlength{\poslevel}
 \newlength{\detaillevel}
+\newlength{\sectionsep}
 \setlength{\poslevel}{1em}
 \setlength{\detaillevel}{2\poslevel}
+\setlength{\sectionsep}{3pt}
 
 % TODO Create web-friendly sans serif CV
 \DeclareOption{sans}{\OptionNotUsed}
@@ -76,7 +78,7 @@
   {0em}
   {}
 % Reduce spacing
-\titlespacing*{\section}{0pt}{2pt}{2pt}
+\titlespacing*{\section}{0pt}{\sectionsep}{2pt}
 
 % Subsection should be indented
 \titleformat{\subsection}
