@@ -24,10 +24,6 @@
 % Basic formatting
 %%%%%%%%%%
 
-% No headers or footers (page numbers)
-\pagestyle{empty}
-% Dense text
-\setlength{\parskip}{0.1mm}
 % New lengths
 \newlength{\poslevel}
 \newlength{\detaillevel}
@@ -35,6 +31,13 @@
 \setlength{\poslevel}{1em}
 \setlength{\detaillevel}{2\poslevel}
 \setlength{\sectionsep}{3pt}
+
+% No headers or footers (page numbers)
+\pagestyle{empty}
+% Dense text
+\setlength{\parskip}{0.1mm}
+% Body text in line with position levels
+\setlength{\parindent}{\poslevel}
 
 % Sans serif option
 \newif\if@sansres
@@ -79,6 +82,9 @@
 % Custom commands and environments
 %%%%%%%%%%
 
+% Allow forcing onto the position level
+\newcommand{\forceposlevel}{\leavevmode{\parindent=\poslevel\indent}}
+
 \if@sansres
 % Sans: Section headers should be large and left aligned
 \titleformat{\section}
@@ -122,20 +128,26 @@
 % Position list environment produces a position header, then bullets any items
 % 1: Title (, location)
 % 2: Start date
-% 3: End date
+% 3: End date (optional)
 % Body: itemised points
-\NewEnviron{positionlist}[3]{
+\NewEnviron{positionlist}[4]{
+  \def\techdetails{#4}
   \position{#1}{#2}{#3}
-  \list{}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
+  \list{-}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
     \BODY
   \endlist
+  \ifx\techdetails\empty
+    %Pass
+  \else
+    \forceposlevel (\techdetails)
+  \fi
 }
 
 % Position para produces a position header, then puts text into paragraph
 % 1: Title (, location)
 % 2: Start date
-% 3: End date
-% 4: Technical skills
+% 3: End date (optional)
+% 4: Technical skills (optional)
 % Body: descriptive text
 \NewEnviron{positionenv}[4]{
   \def\techdetails{#4}
