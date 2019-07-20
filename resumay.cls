@@ -28,9 +28,11 @@
 \newlength{\poslevel}
 \newlength{\detaillevel}
 \newlength{\sectionsep}
+\newlength{\positionsep}
 \setlength{\poslevel}{1em}
 \setlength{\detaillevel}{2\poslevel}
-\setlength{\sectionsep}{3pt}
+\setlength{\sectionsep}{5pt}
+\setlength{\positionsep}{\sectionsep}
 
 % No headers or footers (page numbers)
 \pagestyle{empty}
@@ -110,7 +112,7 @@
   {0em}
   {}
 % Reduce spacing
-\titlespacing*{\subsection}{0pt}{2pt}{2pt}
+\titlespacing*{\subsection}{0pt}{\positionsep}{2pt}
 
 % Define a position header
 % 1: Title (, location)
