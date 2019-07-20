@@ -1,9 +1,25 @@
-\documentclass[sans]{resumay}
+% Resumay is for resum\'es
+% A super-simple LaTeX class for a clear, concise resum\'e
+% (CVs also supported!)
+
+% Copyright © 2019 Cameron McGarry <cameron@cmcgarry.co.uk>
+% This work is free. You can redistribute it and/or modify it under the
+% terms of the Do What The Fuck You Want To Public License, Version 2,
+% as published by Sam Hocevar. See the LICENSE file for more details.
+
+% This document is an example CV made with resumay. It demonstrates some of the
+% basic functionality and includes a simple publication list (which relies on
+% the bibentry package)
+
+\documentclass{resumay}
 
 \name{Gordon Freeman}
 \email{freemang@blackmesa.org}
 \phone{505-735-0174}
 \underlinetitle
+
+% For publication list, rely on bibentry
+\usepackage{bibentry}
 
 \begin{document}
 
@@ -47,5 +63,13 @@
 \end{positionlist}
 
 \section{Publications}
+\bibliographystyle{unsrt}
+\nobibliography{bib}
+
+\begin{enumerate}
+  \item[] \bibentry{paper1}
+  \item[] \bibentry{paper2}
+  \item[] \bibentry{paper3}
+\end{enumerate}
 
 \end{document}
