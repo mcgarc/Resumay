@@ -10,6 +10,8 @@ Distributed under WTFPL (see `LICENSE.txt`)
 Simply place the resumay.cls file into your working directory, and use the
 `resumay` document class.
 
+Pass the `sans` option to use sans class.
+
 Provide a `name`, `email`, and `phone` for your header.
 
 Specify if you want the header to be underlined with `underlinetitle`
