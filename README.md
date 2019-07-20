@@ -14,11 +14,14 @@ Provide a `name`, `email`, and `phone` for your header.
 
 Specify if you want the header to be underlined with `underlinetitle`
 
+Use the `positionlist` and `positionenv` environments to create a bulleted list
+or a simple paragraph. Take optional arguments: title, start date, end date,
+skills
+
 ## Todos
 
-* Example resume.tex
-* Publication list
+* Built-in position list commands
+* Custom bib style? (Or better suggestion in example CV?)
 * More options for headers
 * Automatic placing of items in header
 * Manual control over order of items in header
-
