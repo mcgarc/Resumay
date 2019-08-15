@@ -20,6 +20,12 @@ Use the `positionlist` and `positionenv` environments to create a bulleted list
 or a simple paragraph. Take optional arguments: title, start date, end date,
 skills
 
+## JSON Conversion
+
+A script is included to convert from a CV in JSON format to TeX. This may be
+useful if (for example) you wish to separtely render your same CV in HTML to go
+on your website.
+
 ## Todos
 
 * Built-in position list commands
@@ -27,3 +33,6 @@ skills
 * More options for headers
 * Automatic placing of items in header
 * Manual control over order of items in header
+* Improve support of Python converter (see file)
+* Proper description of JSON schema
+* Compatibility with JSONresume (?)
