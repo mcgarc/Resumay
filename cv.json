@@ -1,0 +1,112 @@
+{
+  "name":"Gordon Freeman",
+  "email":"freemang@blackmesa.org",
+  "phone":"505-735-0174",
+  "sections": 
+  [
+    {
+      "title":"Education",
+      "publish":true,
+      "id":"education",
+      "positions":[
+        {
+          "title":"PhD, Massachusetts Institute of Technology",
+          "start":"1994",
+          "end":"1999",
+          "comments":[
+           "Thesis title: Observation of Einstein-Podolsky-Rosen Entanglement on supraquantum structures by induction through nonlinear transuranic crystals of extremely long wavelength pulse from mode-locked source array",
+           "Numerous awards for poster presentations",
+           "Experience communicating theoretical concepts to experimental physicists"
+          ],
+          "skills":[
+            "mathematical and theoretical physics",
+            "quantum field theory",
+            "laser physics"
+          ]
+        },
+        {
+          "title":"Physics major, Stanford University",
+          "start":"1990",
+          "end":"1994",
+          "comments":[
+            "First in class, 4.0 GPA",
+            "Specialisation in quantum field theory and condensed matter systems"
+          ],
+          "skills":[
+            "mathematical and theoretical physics",
+            "numerical simulation",
+            "C",
+            "C++",
+            "Fortran"
+          ]
+        }
+      ]
+    },
+    {
+      "title":"Employment",
+      "publish":true,
+      "id":"research",
+      "positions":[
+        {
+          "title":"Research associate, Black Mesa Research Facility",
+          "start":"2001",
+          "end":"Present",
+          "comments":[
+            "Level three research associate",
+            "Operation in extremely hazardous environment",
+            "Direct responsibility for critical procedure in a highly-classified experiment"
+          ],
+          "skills":[
+            "Experimental physics",
+            "technical laboratory skills"
+          ]
+        },
+        {
+          "title":"Resarch assistant, Massachusetts Institute of Technology",
+          "start":"1999",
+          "end":"2001",
+          "comments":[
+            "Continutation of research from PhD",
+            "Co-supervision of early stage PhD students",
+            "Lecturing undergraduate physicists in electromagnetism"
+          ],
+          "skills":[
+            "Mathematical and theoretical physics",
+            "quantum field theory",
+            "management",
+            "teaching"
+          ]
+        }
+      ]
+    }
+  ],
+  "publications":[
+    {
+      "bibid":"paper1",
+      "bibtype":"Article",
+      "author":"Freeman, G. and Smith, J.",
+      "title":"{EPR} in supraquantum structures",
+      "journal":"Letters of review for physics",
+      "year":"1995",
+      "volume":"99"
+    },
+    {
+      "bibid":"paper2",
+      "bibtype":"Article",
+      "author":"Freeman, G. and Smith, J.",
+      "title":"{EPR} induction through nonlinear transuranic crystals",
+      "journal":"Letters of review for physics",
+      "year":"1996",
+      "volume":"107"
+    },
+    {
+      "bibid":"paper3",
+      "bibtype":"Article",
+      "author":"Freeman, G. and Smith, J.",
+      "title":"{EPR} from an extremely long wavelength pulse",
+      "journal":"Letters of review for physics",
+      "year":"1998",
+      "volume":"120"
+    }
+  ]
+}
