@@ -2,7 +2,7 @@
 # A super-simple LaTeX class for a clear, concise resum\'e
 # (CVs also supported!)
 
-# Copyright © 2019 Cameron McGarry <cameron@cmcgarry.co.uk>
+# Copyright (C) 2019 Cameron McGarry <cameron@cmcgarry.co.uk>
 # This work is free. You can redistribute it and/or modify it under the
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See the LICENSE file for more details.
@@ -19,6 +19,8 @@ output BibTeX file (optional, default to bib_.bib)
 TODO:
     - Warn on overwriting files
     - Proper saving of file rather than printing to console
+    - Do something with position subtitles (just roll in with title?)
+    - Ensure capitalisation on first letter in skills
     - Improved documentation
     - Properly handle missing keys
     - Respect "publish" key
