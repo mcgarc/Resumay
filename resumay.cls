@@ -18,6 +18,7 @@
 \RequirePackage{titlesec} % Customise section headings
 \RequirePackage{environ}
 \RequirePackage{enumitem}
+\RequirePackage{hyperref} % For URLs
 \RequirePackage[a4paper, total={6in,9in}]{geometry}
 
 %%%%%%%%%%
@@ -47,6 +48,13 @@
 
 \ProcessOptions\relax
 
+% URLs
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black
+    }
+
 %%%%%%%%%%
 % Sans-serif
 %%%%%%%%%%
@@ -63,6 +71,7 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\email}[1]{\def\@email{#1}}
 \newcommand{\phone}[1]{\def\@phone{#1}}
+\newcommand{\website}[1]{\def\@website{#1}}
 \newif\ifultitle
 \newcommand{\underlinetitle}{\ultitletrue}
 
@@ -73,7 +82,15 @@
 \begin{flushleft}
   \textbf{\Large\@name}\\
   \vspace{4pt}
-  \small\@phone \hfill \@email\\
+  \ifcsname @email\endcsname
+  \small\href{mailto:\@email}{\@email} \hfill
+  \fi
+  \ifcsname @phone\endcsname
+  \small\@phone \\
+  \fi
+  \ifcsname @website\endcsname
+  \small\href{https://\@website}{\@website} \hfill
+  \fi
   \ifultitle
   \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
   \fi
