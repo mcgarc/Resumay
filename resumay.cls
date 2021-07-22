@@ -173,6 +173,7 @@
 \NewEnviron{positionenv}[4]{
   \def\techdetails{#4}
   \position{#1}{#2}{#3}
+  \vspace{0.5pt}
   \begin{minipage}{\textwidth}
   \ifx\techdetails\empty
     \leftskip=\detaillevel \BODY
