@@ -152,13 +152,15 @@
 \NewEnviron{positionlist}[4]{
   \def\techdetails{#4}
   \position{#1}{#2}{#3}
-  \list{-}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt \parsep=0pt}
+  \vspace{0.5pt}
+  \list{-}{\leftmargin=\detaillevel \topsep=0pt \partopsep=0pt \itemsep=1pt
+    \parsep=0pt}
     \BODY
   \endlist
   \ifx\techdetails\empty
     %Pass
   \else
-    \forceposlevel (\techdetails)
+    \forceposlevel Skills: \techdetails
   \fi
 }
 
